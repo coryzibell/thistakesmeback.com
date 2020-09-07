@@ -1,0 +1,8 @@
+name = "thistakesmeback-com"
+type = "webpack"
+workers_dev = false
+route = "thistakesmeback.com/*"
+
+[site]
+bucket = "./public"
+entry-point = "workers-site"
