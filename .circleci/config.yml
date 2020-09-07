@@ -19,6 +19,8 @@ workflows:
       - whoami
 
       - cloudflare-wrangler/publish-wrangler-site:
+          environment:
+            - USER: circleci
           context:
             - cloudflare-workers-auth
             - cloudflare-zone-thistakesmeback-com
