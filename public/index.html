@@ -7,7 +7,15 @@
         <p style="color: #cccccc;">By <a style="color: #cccccc;" href="https://twitter.com/coryzibell">Cory Zibell</a></p>
         <script>
           history.back()
-          window.location.href = document.referrer
+          console.log(document.referrer)
+          if (window.location.href !== document.referrer && document.referrer !== "") {
+            window.location.href = document.referrer
+          } else {
+            let paragraph = document.querySelector('p')
+            let h2 = document.createElement('h2')
+            h2.innerHTML = 'Or it would, if I could see history or a referrer.'
+            paragraph.parentNode.insertBefore(h2, paragraph)
+          }
         </script>
     </body>
 </html>
