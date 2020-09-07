@@ -6,16 +6,17 @@
         <h1>Ahh, this takes me back.</h1>
         <p style="color: #cccccc;">By <a style="color: #cccccc;" href="https://twitter.com/coryzibell">Cory Zibell</a></p>
         <script>
-          history.back()
-          console.log(document.referrer)
-          if (window.location.href !== document.referrer && document.referrer !== "") {
-            window.location.href = document.referrer
-          } else {
-            let paragraph = document.querySelector('p')
-            let h2 = document.createElement('h2')
-            h2.innerHTML = 'Or it would, if I could see history or a referrer.'
-            paragraph.parentNode.insertBefore(h2, paragraph)
-          }
+          setTimeout(() => {  history.back() }, 2000);
+          setTimeout(() => {
+            if (window.location.href !== document.referrer && document.referrer !== "") {
+                window.location.href = document.referrer
+              } else {
+                let paragraph = document.querySelector('p')
+                let h2 = document.createElement('h2')
+                h2.innerHTML = 'Or it would, if I could see history or a referrer.'
+                paragraph.parentNode.insertBefore(h2, paragraph)
+              }
+          }, 3000);
         </script>
     </body>
 </html>
