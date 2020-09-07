@@ -7,6 +7,14 @@ workflows:
 
   deploy-cloudflare-production:
     jobs:
+      - whoami:
+          docker:
+            - image: cimg/base:stable
+          steps:
+            - run:
+                name: whoami
+                command: whoami
+
       - cloudflare-wrangler/publish-wrangler-site:
           context:
             - cloudflare-workers-auth
