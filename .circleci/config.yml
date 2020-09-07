@@ -3,17 +3,20 @@ version: 2.1
 orbs:
   cloudflare-wrangler: coryzibell/cloudflare-wrangler@volatile
 
+jobs:
+  whoami:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: whoami
+          command: whoami
+
 workflows:
 
   deploy-cloudflare-production:
     jobs:
-      - whoami:
-          docker:
-            - image: cimg/base:stable
-          steps:
-            - run:
-                name: whoami
-                command: whoami
+      - whoami
 
       - cloudflare-wrangler/publish-wrangler-site:
           context:
