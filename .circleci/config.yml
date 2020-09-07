@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  cloudflare-wrangler: coryzibell/cloudflare-wrangler@volatile
+  cloudflare-wrangler: coryzibell/cloudflare-wrangler@2.0.5
 
 jobs:
   whoami:
@@ -19,8 +19,6 @@ workflows:
       - whoami
 
       - cloudflare-wrangler/publish-wrangler-site:
-          environment:
-            - USER: circleci
           context:
             - cloudflare-workers-auth
             - cloudflare-zone-thistakesmeback-com
