@@ -5,6 +5,9 @@
     <body>
         <h1>Ahh, this takes me back.</h1>
         <p style="color: #cccccc;">By <a style="color: #cccccc;" href="https://twitter.com/coryzibell">Cory Zibell</a></p>
-        <script>history.back()</script>
+        <script>
+          history.back()
+          window.location.href = document.referrer
+        </script>
     </body>
 </html>
