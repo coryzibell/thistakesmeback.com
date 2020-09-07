@@ -1,0 +1,17 @@
+version: 2.1
+
+orbs:
+  cloudflare-wrangler: coryzibell/cloudflare-wrangler@volatile
+
+workflows:
+
+  deploy-cloudflare-production:
+    jobs:
+      - cloudflare-wrangler/publish-wrangler-site:
+          context:
+            - cloudflare-workers-auth
+            - cloudflare-zone-thistakesmeback-com
+          filters:
+            branches:
+              only:
+                - master
