@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  cloudflare-wrangler: coryzibell/cloudflare-wrangler@2.0.4
+  cloudflare-wrangler: coryzibell/cloudflare-wrangler@2.0.6
 
 jobs:
   whoami:
